@@ -38,7 +38,7 @@ auto main() -> int {
     std::cout << "  Channels: " << codecPar->ch_layout.nb_channels << std::endl;
 
     if (codecPar->codec_type == AVMEDIA_TYPE_VIDEO) {
-      AVCodec *pCodec = avcodec_find_decoder(codecPar->codec_id);
+      // AVCodec *pCodec = avcodec_find_decoder(codecPar->codec_id);
     }
   }
 
