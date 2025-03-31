@@ -17,3 +17,5 @@ CheckOptions:
     value: '0'
   - key: cppcoreguidelines-pro-type-member-init.HonorConstructorInitializers
     value: 'true'
+  - key: hicpp-no-stdendl.AllowedStreams
+    value: 'std::cerr'
