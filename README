@@ -1,0 +1,97 @@
+# ffmpeg_playground
+
+A C++ project demonstrating multimedia processing using FFmpeg libraries. This project includes examples for printing media file information, extracting keyframes from video files, and setting up a basic video playback executable.
+
+## Features
+
+- **Print Info**: Displays detailed information about a media file using FFmpeg.
+- **Extract Keyframes**: Decodes video frames and saves keyframes as PPM image files.
+- **Play Video**: Provides a starting point for implementing video playback (currently a placeholder).
+
+## Prerequisites
+
+- **CMake**: Version 3.14 or higher.
+- **C++ Compiler**: Must support C++17.
+- **FFmpeg Libraries**: Required components include `AVCODEC`, `AVFORMAT`, `AVUTIL`, `SWRESAMPLE`, `SWSCALE`, and `AVDEVICE`.
+- **vcpkg**: Used to manage and install FFmpeg dependencies.
+- **Ninja**: (Optional) If you prefer to use the Ninja generator.
+
+## Setup and Build Instructions
+
+1. **Install Dependencies with vcpkg**
+
+   Ensure that [vcpkg](https://github.com/microsoft/vcpkg) is installed. Then, install the FFmpeg package:
+
+   ```bash
+   ./vcpkg install ffmpeg
+   ```
+
+2. **Configure the Project**
+
+   This project uses CMake presets for configuration. You can configure the project using the provided presets (which leverage vcpkg):
+
+   ```bash
+   cmake --preset default
+   ```
+
+3. **Build the Project**
+
+   Build the project with CMake:
+
+   ```bash
+   cmake --build .
+   ```
+
+   This will compile the following executables:
+   - `print_info`
+   - `extract_keyframes`
+   - `play_video`
+   - `main` (from `main.cpp`, which outputs "Hello, World!")
+
+## Usage
+
+- **Print Info**
+
+  Displays detailed information about the provided media file:
+
+  ```bash
+  ./print_info
+  ```
+
+- **Extract Keyframes**
+
+  Extracts frames from a video and saves them as PPM images. The default video file is located in the `data/` directory:
+
+  ```bash
+  ./extract_keyframes
+  ```
+
+- **Play Video**
+
+  Currently a placeholder for video playback functionality:
+
+  ```bash
+  ./play_video
+  ```
+
+## Code Style and Quality
+
+- **.clang-format**: Configured with a Google-based style and additional customizations to maintain a consistent code format.
+- **.clang-tidy**: Enforces a set of checks (including modern C++ practices, bug-prone patterns, and performance improvements) to ensure high code quality.
+
+## Project Components
+
+- **main.cpp**: A simple "Hello, World!" application used for initial testing.
+- **src/print_info/**: Contains code that uses FFmpeg to read a media file and output stream details.
+- **src/extract_keyframes/**: Implements frame extraction by decoding video frames, converting them to RGB format, and saving them as PPM images.
+- **src/play_video/**: A stub for future development of video playback functionality.
+
+## Contributing
+
+Contributions are welcome! Please adhere to the project's formatting and linting guidelines:
+- Run **clang-format** and **clang-tidy** before submitting pull requests.
+- Ensure that new code follows the established C++17 standard and project structure.
+
+## License
+
+This project is licensed under the [Your License] License. See the LICENSE file for details.
